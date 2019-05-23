@@ -1,5 +1,7 @@
 1. Gson 版本问题 YelpEurekaServerApplication 启动失败
 
+https://blog.csdn.net/qq_35387940/article/details/89098208
+
 Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
 2019-05-23 11:48:57.213 ERROR 34018 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
 
