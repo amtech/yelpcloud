@@ -24,6 +24,7 @@
         <module>yelp-provider</module>
         <module>yelp-provider-api</module>
         <module>yelp-parent</module>
+        <module>yelp-client</module>
     </modules>
 
 
