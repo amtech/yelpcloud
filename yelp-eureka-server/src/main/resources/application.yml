@@ -1,10 +1,47 @@
-server:
-  port: 8761
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    register-with-eureka: false   #是否要注册到其他Eureka Server实例
-    fetch-registry: false         # 是否要从其他Eureka Server实例获取数据
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
+#-------Eureka Server 单节点服务-------------
+#server:
+#  port: 8761
+#eureka:
+#  instance:
+#    hostname: localhost
+#  client:
+#    register-with-eureka: false   #是否要注册到其他Eureka Server实例
+#    fetch-registry: false         # 是否要从其他Eureka Server实例获取数据
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/
+
+
+
+
+#-------Eureka Server 双节点集群-------------
+
+
+spring:
+  application:
+    name: microservice-discovery-eureka-ha
+
+  profiles: peer1                                 #指定profile=peer1
+
+---
+spring:
+  server:
+    port: 8761
+  eureka:
+    instance:
+      hostname: peer1                             #指定当profile=peer1时，主机名是peer1
+    client:
+      serviceUrl:
+        defaultZone: http://peer2:8762/eureka/    #将自己注册到peer2这个Eureka上面去
+
+---
+spring:
+  server:
+    port: 8762
+  eureka:
+    instance:
+      hostname: peer2                             #指定当profile=peer1时，主机名是peer1
+    client:
+      serviceUrl:
+        defaultZone: http://peer1:8761/eureka/    #将自己注册到peer2这个Eureka上面去
+
+
