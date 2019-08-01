@@ -17,7 +17,7 @@ public class MemberController {
 
     @GetMapping("/users/{id}")
     public User findById(@PathVariable Long id){
-        User user = restTemplate.getForObject("http://localhost:8000/user/{id}", User.class, id);
+        User user = restTemplate.getForObject("http://yelp-provider-usc/user/{id}", User.class, id);
         return user;
     }
 }

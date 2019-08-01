@@ -11,3 +11,6 @@ http://www.itmuch.com/spring-cloud/finchley-1/
 ## springboot2新版springcloud微服务全家桶实战
 
 https://www.jianshu.com/p/fc1152474502
+
+SpringCloud-Eureka服务注册与发现组件
+https://www.jianshu.com/p/89f372f54614

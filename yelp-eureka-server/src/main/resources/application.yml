@@ -1,6 +1,6 @@
 spring:
   application:
-    name: microservice-discovery-eureka-ha
+    name: yelp-eureka-server
 ---
 spring:
   profiles: peer1                                 # 指定profile=peer1
