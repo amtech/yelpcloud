@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
-    @GetMapping("/{id}")
+    @GetMapping("find/{id}")
     public User findById(@PathVariable Long id){
         User user = new User();
         user.setId(id);

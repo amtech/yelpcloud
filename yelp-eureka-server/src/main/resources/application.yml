@@ -10,9 +10,10 @@ eureka:
   instance:
     hostname: peer1                               # 指定当profile=peer1时，主机名是peer1
   client:
+    register-with-eureka: false
+    fetch-registry: false
     serviceUrl:
       defaultZone: http://peer2:8762/eureka/      # 将自己注册到peer2这个Eureka上面去
-
 ---
 spring:
   profiles: peer2
@@ -22,5 +23,12 @@ eureka:
   instance:
     hostname: peer2
   client:
+    register-with-eureka: false
+    fetch-registry: false
     serviceUrl:
       defaultZone: http://peer1:8761/eureka/
+
+
+
+#java -jar yelp-eureka-server-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer1
+#java -jar yelp-eureka-server-0.0.1-SNAPSHOT.jar --spring.profiles.active=peer2
