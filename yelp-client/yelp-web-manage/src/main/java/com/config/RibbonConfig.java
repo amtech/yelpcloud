@@ -9,7 +9,7 @@ import org.springframework.context.annotation.Configuration;
  * 该类为Ribbon的配置类
  * 注意：该类不能放在主应用程序上下文@ComponentScan所扫描的包中，否则配置将会被所有Ribbon Client共享。
  */
-@Configuration
+//@Configuration
 public class RibbonConfig {
     @Bean
     public IRule ribbonRule() {
