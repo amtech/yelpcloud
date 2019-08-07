@@ -16,6 +16,10 @@ yelp-provider-usc:
   ribbon:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
 
+logging:
+  level:
+    com.evol.manage.feign.UserFeignClient: debug
+
 #ribbon:
 #  eager-load:
 #    enabled: true   #配置饥饿加载，让Ribbon在应用启动时就初始化
