@@ -37,5 +37,8 @@ feign:
         loggerLevel: none
     default-to-properties: false   #默认属性配置优先级高于代码配置，如果你想修改代码配置方式的优先级
   compression:
-    request: true
+    request:
+      enabled: true
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 2048
     response: true
