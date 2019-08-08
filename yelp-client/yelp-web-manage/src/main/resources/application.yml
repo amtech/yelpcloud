@@ -27,5 +27,11 @@ logging:
 #feign:
 #  client:
 #    config:
-#      yelp-provider-usc:
+#      yelp-provider-usc:   #为feign配置指定的服务
 #        loggerLevel: full
+
+feign:
+  client:
+    config:
+      default:
+        loggerLevel: full
