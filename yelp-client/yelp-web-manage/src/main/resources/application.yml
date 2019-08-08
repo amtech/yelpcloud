@@ -24,4 +24,8 @@ logging:
 #  eager-load:
 #    enabled: true   #配置饥饿加载，让Ribbon在应用启动时就初始化
 #      clients: yelp-provider-usc   # 多个用,分隔
-
+feign:
+  client:
+    config:
+      yelp-provider-usc:
+        loggerLevel: full

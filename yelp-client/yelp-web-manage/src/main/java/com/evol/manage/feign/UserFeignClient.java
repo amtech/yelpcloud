@@ -7,7 +7,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(name = "yelp-provider-usc", configuration = UserFeignClient.UserFeignConfig.class)
+//@FeignClient(name = "yelp-provider-usc", configuration = UserFeignClient.UserFeignConfig.class)
+@FeignClient(name = "yelp-provider-usc")
 public interface UserFeignClient {
 
     @GetMapping("/users/find/{id}")
@@ -22,10 +23,10 @@ public interface UserFeignClient {
      * 否则，该配置将会被所有Feign Client共享，无法实现细粒度配置！
      * 个人建议：像我一样，不加@Configuration注解
      */
-    class UserFeignConfig {
-        @Bean
-        public Logger.Level logger(){
-            return Logger.Level.FULL;
-        }
-    }
+//    class UserFeignConfig {
+//        @Bean
+//        public Logger.Level logger(){
+//            return Logger.Level.FULL;
+//        }
+//    }
 }
