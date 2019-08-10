@@ -1,6 +1,7 @@
 package com.evol.manage.feign;
 
 import com.evol.manage.model.User;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import feign.Logger;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.context.annotation.Bean;
@@ -13,6 +14,14 @@ public interface UserFeignClient {
 
     @GetMapping("/users/find/{id}")
     User findById(@PathVariable("id") Long id);
+
+    @GetMapping("users/findByPwd?username={username}&password={password}")
+    User findByPwd(@PathVariable(value = "username") String username, @PathVariable(value = "password") String password);
+
+
+    @GetMapping("users/getUser/{id}")
+    User getUser(@PathVariable("id") Long id);
+
 
     /**
      * 该Feign Client的配置类，注意：

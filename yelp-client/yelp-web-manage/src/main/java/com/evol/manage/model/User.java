@@ -5,9 +5,21 @@ import lombok.Data;
 @Data
 public class User {
 
-    private long id;
+    public User(){}
+
+    public User(Long id, String username, String pasword, String nick){
+        this.id = id;
+        this.username = username;
+        this.password = pasword;
+        this.nick = nick;
+    }
+
+
+    private Long id;
 
     private String username;
+
+    private String password;
 
     private String nick;
 }

@@ -42,3 +42,10 @@ feign:
       mime-types: text/xml,application/xml,application/json
       min-request-size: 2048
     response: true
+
+#为/actuator//health 端点配置显示详情：
+management:
+  endpoint:
+    health:
+      # 是否展示健康检查详情
+      show-details: always
