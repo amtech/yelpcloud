@@ -42,6 +42,8 @@ feign:
       mime-types: text/xml,application/xml,application/json
       min-request-size: 2048
     response: true
+  hystrix:
+    enabled: false   #默认Feign是不启用Hystrix， true开启
 
 #为/actuator//health 端点配置显示详情：
 management:
