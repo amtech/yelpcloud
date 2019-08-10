@@ -4,6 +4,7 @@ import com.evol.manage.model.User;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import feign.Logger;
 import feign.hystrix.FallbackFactory;
+import feign.hystrix.HystrixFeign;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.context.annotation.Bean;
@@ -13,7 +14,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 
 //@FeignClient(name = "yelp-provider-usc", configuration = UserFeignClient.UserFeignConfig.class)
 //@FeignClient(name = "yelp-provider-usc", fallback = UserFeignClientFallback.class)
-@FeignClient(name = "yelp-provider-usc", fallbackFactory = UserFeignClientFallbackFactory.class)
+//@FeignClient(name = "yelp-provider-usc", fallbackFactory = UserFeignClientFallbackFactory.class)
+@FeignClient(name = "yelp-provider-usc", fallbackFactory = UserFeignClientFallbackFactory.class, configuration = FeignDisableHystrixConfiguration.class)
 public interface UserFeignClient {
 
     @GetMapping("/users/find/{id}")
@@ -42,6 +44,7 @@ public interface UserFeignClient {
 //            return Logger.Level.FULL;
 //        }
 //    }
+
 }
 
 @Component
@@ -91,3 +94,6 @@ class UserFeignClientFallbackFactory implements FallbackFactory<UserFeignClient>
     }
 
 }
+
+
+
