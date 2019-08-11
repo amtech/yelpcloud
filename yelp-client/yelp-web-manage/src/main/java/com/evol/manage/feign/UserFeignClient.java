@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 //@FeignClient(name = "yelp-provider-usc", configuration = UserFeignClient.UserFeignConfig.class)
-//@FeignClient(name = "yelp-provider-usc", fallback = UserFeignClientFallback.class)
+@FeignClient(name = "yelp-provider-usc", fallback = UserFeignClientFallback.class)
 //@FeignClient(name = "yelp-provider-usc", fallbackFactory = UserFeignClientFallbackFactory.class)
-@FeignClient(name = "yelp-provider-usc", fallbackFactory = UserFeignClientFallbackFactory.class, configuration = FeignDisableHystrixConfiguration.class)
+//@FeignClient(name = "yelp-provider-usc", fallbackFactory = UserFeignClientFallbackFactory.class, configuration = FeignDisableHystrixConfiguration.class)
 public interface UserFeignClient {
 
     @GetMapping("/users/find/{id}")
