@@ -27,6 +27,7 @@
         <module>yelp-client</module>
         <module>yelp-hystrix-dashboard</module>
         <module>yelp-hystrix-turbine</module>
+        <module>yelp-gateway-zuul</module>
     </modules>
 
 

@@ -30,6 +30,10 @@ web-manage
 
 /Users/evol/source/github/yelpcloud/yelp-client/yelp-web-manage/target
 
+```shell
+#java -jar yelp-web-manage-0.0.1-SNAPSHOT.jar
+```
+
 
 
 
